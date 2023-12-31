@@ -42,9 +42,10 @@ func main() {
 
 	fmt.Println("VK API RESPONSE: ")
 	fmt.Printf("Total Posts: %d\n", vkresponse1.Response.Count)
+	sendPhoto := Models.SendPhoto{ChatID: keys.TelegramChatId}
 	for _, post := range vkresponse1.Response.Items {
 		message := fmt.Sprintf("%s", post.Text)
-		sendPhoto := Models.SendPhoto{ChatID: keys.TelegramChatId}
+
 		isPhoto := false
 		for _, attachment := range post.Attachments {
 			if attachment.Type == "photo" {
@@ -108,7 +109,6 @@ func main() {
 			fmt.Println("Sent the posts successfully to the telegram!!")
 
 		}
-
 		fmt.Println("----------------------")
 	}
 

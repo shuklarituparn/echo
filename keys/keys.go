@@ -1,7 +1,6 @@
 package keys
 
 import (
-	"fmt"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
@@ -31,7 +30,5 @@ func LoadEnvVariables(filename string) {
 	countString, _ := os.LookupEnv("COUNT")
 	count, _ := strconv.ParseInt(countString, 10, 32)
 	Count = int(count)
-	TelegramChatId, _ = os.LookupEnv("chat_id")
-
-	fmt.Printf("%T", OwnerId)
+	TelegramChatId, _ = os.LookupEnv("CHAT_ID")
 }
