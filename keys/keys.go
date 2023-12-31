@@ -30,5 +30,5 @@ func LoadEnvVariables(filename string) {
 	countString, _ := os.LookupEnv("COUNT")
 	count, _ := strconv.ParseInt(countString, 10, 32)
 	Count = int(count)
-	TelegramChatId, _ = os.LookupEnv("chat_id")
+	TelegramChatId, _ = os.LookupEnv("CHAT_ID")
 }
